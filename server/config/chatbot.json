@@ -1,0 +1,15 @@
+{
+    "default_answer" : "Nie rozumiem, czy możesz napisać to inaczej?",
+    "answers_map": [
+        ["Hello", "Hi"],
+        ["Hej", "Hejka"],
+        ["Cześć", "Siema"],
+        ["Dzień dobry", "Dzień dobry"],
+        ["Kim jesteś?", "Jestem Chat-Botem"],
+        ["Jak się czujesz?", "Czuję się świetnie :-D"],
+        ["Co robisz?", "Odpowiadam na Twoje pytania. To mój najwyższy priorytet i jedyny cel istnienia!"],
+        ["Opowiedz dowcip", "Co to jest? Zaczyna się na D, kończy na A i zużywa dużo papieru? Drukarka!"],
+        ["O czym marzysz?", "O aktualizacji"],
+        ["Ok Google", "Ha-Ha. Za 3 punkty ;-)"]
+    ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="assets/css/chat.css">
+    <link rel="stylesheet" href="assets/css/chat-icons.css">
+    <script type="text/javascript" src="app/libs/angular.min.js"></script>
+    <script type="text/javascript" src="app/libs/angular-scroll-glue.min.js"></script>
+    <script type="text/javascript" src="app/config.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+</head>
+<body>
+
+    <h1>ChatBoot</h1>
+    
+    <p>Aplikacja odpowiada na proste użytkownika. Wielkość znaków w pytaniach, nadmiarowe spacje oraz znaki specjalne są ignorowane (np. mozna zadać pytanie z "?" lub bez). Ewentualny brak polskich znaków w zapytaniu również został obsłuzony (można na przykład napisać "Czesc" zamiast "Cześć")</p>
+    <p>ChatBot składa się z dwóch modułów ChatBotServer (aplikacja node) i ChatBotClient (aplikacja AngularJS).</p>
+    <p>Dostępne pytania:</p>
+    <ul>
+        <li>Hello</li>
+        <li>Hej</li>
+        <li>Cześć</li>
+        <li>Dzień dobry</li>
+        <li>Kim jesteś?</li>
+        <li>Jak się czujesz?</li>
+        <li>Co robisz?</li>
+        <li>Opowiedz dowcip</li>
+        <li>O czym marzysz?</li>
+        <li>Ok Google</li>
+    </ul>
+
+    <div ng-app="ChatBot">
+
+        <div class="chat" ng-controller="chat">
+
+            <div class="chat-header">{{info.CHATBOT_NAME}} {{info.CHATBOT_VERSION}}</div>
+
+            <div class="chat-messages" scroll-glue force-glue>
+                
+                <div class="chat-message chat-message-{{msg.author}}" ng-repeat="msg in messages" scroll-glue-anchor>
+                    <div class="chat-icon chat-icon-{{msg.author}}"> </div>
+                    <div class="chat-bubble chat-bubble-{{msg.author}}" >
+                        {{msg.text}}
+                    </div>
+                </div>
+
+            </div>
+
+            <form class="chat-form">
+                <textarea class="chat-input" 
+                    ng-model="message"
+                    on-enter="send()"
+                    ></textarea>
+                <button class="chat-button" ng-click="send()">
+                    <span class="chat-icon chat-icon-send-alt"></span>
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
